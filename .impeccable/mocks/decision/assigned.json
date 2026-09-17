@@ -1,0 +1,7 @@
+{
+  "approved": true,
+  "approvedFor": ["app/page.tsx", "app/produtos/page.tsx"],
+  "direction": "Oficina de peças",
+  "seed": "8b9c3440",
+  "note": "Composição central aprovada pelo usuário; imagens de produtos são conceitos fictícios."
+}

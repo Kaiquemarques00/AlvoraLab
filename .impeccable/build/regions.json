@@ -1,0 +1,16 @@
+{
+  "regions": [
+    {"id":"header","kind":"chrome","grid":"A0:J0","note":"barra branca de navegação e logo vetorial"},
+    {"id":"pegboard","kind":"texture","grid":"H1:J1","note":"amostra limpa do painel perfurado cinza azulado"},
+    {"id":"hero-product","kind":"plate","grid":"B1:G7","note":"organizador 3D azul e prateleira metálica vistos de frente sob luz lateral"},
+    {"id":"categories","kind":"control","grid":"A1:B3","note":"lista vertical de categorias"},
+    {"id":"hero-title","kind":"text","grid":"H2:J3","note":"Ideias que ganham forma"},
+    {"id":"hero-copy","kind":"text","grid":"H3:J4","note":"texto de apoio do hero"},
+    {"id":"hero-cta","kind":"control","grid":"H5:I5","note":"Explorar produtos"},
+    {"id":"hero-footnote","kind":"text","grid":"I6:J6","note":"nota curta de fechamento"},
+    {"id":"planter","kind":"plate","grid":"A8:C9","note":"vaso modular azul com planta"},
+    {"id":"headphone-stand","kind":"plate","grid":"E8:F9","note":"suporte de fones preto"},
+    {"id":"cable-organizer","kind":"plate","grid":"H8:I9","note":"organizador de cabos azul"},
+    {"id":"product-labels","kind":"text","grid":"J8:J9","note":"nome do terceiro produto conceito e ação"}
+  ]
+}

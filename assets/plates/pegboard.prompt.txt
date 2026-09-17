@@ -1,0 +1,1 @@
+Source: mirrored texture crop from the upper-right clean pegboard area of assets/plates/hero-product.png, created from the approved Oficina de peças mockup. The source rectangle begins at 70% of the source width and 4% of its height, spans 27% of width and 29% of height, and is mirrored into a 2×2 seamless PNG tile.

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Scaffold reference: assigned.png</title>
+  <link rel="stylesheet" href="layout.css">
+  <style>html,body{margin:0}body{background:#e1e6eb}.region{box-sizing:border-box}.region.text p{white-space:pre-wrap}</style>
+</head>
+<body>
+<!-- Reference only. Every region sits at its measured box inside a comp-aspect frame. Take the boxes (layout.css), keep your own semantic structure. -->
+<main class="comp-frame" style="max-width:1586px">
+  <div class="r-header region chrome" data-region="header"><!-- barra branca de navegação e logo vetorial --></div>
+  <div class="r-pegboard region texture" data-region="pegboard" style="background-image:url('../../../assets/plates/pegboard.png');background-repeat:repeat"></div>
+  <figure class="r-hero-product region plate" data-region="hero-product"><img src="../../../assets/plates/hero-product.png" alt="" style="width:100%;height:100%;object-fit:contain;object-position:top left"></figure>
+  <div class="r-categories region control" data-region="categories"><!-- lista vertical de categorias: rebuild the control's chrome from the crop (comp-spec.mjs --crop categories); its ink box, border, fill, radius, and label size are the comp's --></div>
+  <div class="r-hero-title region text" data-region="hero-title"><!-- Ideias que ganham forma --><p style="line-height:1.05;margin:0">hero-title</p></div>
+  <div class="r-hero-copy region text" data-region="hero-copy"><!-- texto de apoio do hero --><p style="line-height:1.05;margin:0">hero-copy</p></div>
+  <div class="r-hero-cta region control" data-region="hero-cta"><!-- Explorar produtos: rebuild the control's chrome from the crop (comp-spec.mjs --crop hero-cta); its ink box, border, fill, radius, and label size are the comp's --></div>
+  <div class="r-hero-footnote region text" data-region="hero-footnote"><!-- nota curta de fechamento --><p style="line-height:1.05;margin:0">hero-footnote</p></div>
+  <figure class="r-planter region plate" data-region="planter"><img src="../../../assets/plates/planter.png" alt="" style="width:100%;height:100%;object-fit:contain;object-position:top left"></figure>
+  <figure class="r-headphone-stand region plate" data-region="headphone-stand"><img src="../../../assets/plates/headphone-stand.png" alt="" style="width:100%;height:100%;object-fit:contain;object-position:top left"></figure>
+  <figure class="r-cable-organizer region plate" data-region="cable-organizer"><img src="../../../assets/plates/cable-organizer.png" alt="" style="width:100%;height:100%;object-fit:contain;object-position:top left"></figure>
+  <div class="r-product-labels region text" data-region="product-labels"><!-- nome do terceiro produto conceito e ação --><p style="line-height:1.05;margin:0">product-labels</p></div>
+</main>
+</body>
+</html>

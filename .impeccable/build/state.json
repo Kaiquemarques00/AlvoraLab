@@ -1,0 +1,127 @@
+{
+  "tool": "build-phase",
+  "version": 2,
+  "startedAt": "2026-09-16T17:44:42.229Z",
+  "comp": ".impeccable/mocks/decision/assigned.png",
+  "direction": null,
+  "breakpoint": "1440x900",
+  "artifact": null,
+  "phase": "hero",
+  "phases": {
+    "comps": {
+      "status": "skipped",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [
+        {
+          "at": "2026-09-16T17:44:42.229Z",
+          "text": "started with an approved comp; the comp round happened before this state (surface round or manual)"
+        }
+      ],
+      "gate": null,
+      "forced": null
+    },
+    "spec": {
+      "status": "closed",
+      "openedAt": "2026-09-16T17:44:42.228Z",
+      "closedAt": "2026-09-16T17:49:31.537Z",
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "12 regions, 5 plates, 4 text regions measured",
+        "at": "2026-09-16T17:49:31.537Z"
+      },
+      "forced": null
+    },
+    "plates": {
+      "status": "closed",
+      "openedAt": "2026-09-16T17:49:31.537Z",
+      "closedAt": "2026-09-16T17:54:13.205Z",
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "5/5 plates",
+        "at": "2026-09-16T17:54:13.205Z"
+      },
+      "forced": null
+    },
+    "hero": {
+      "status": "open",
+      "openedAt": "2026-09-16T17:54:13.205Z",
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "sections": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "motion": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "responsive": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "review": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    }
+  },
+  "finish": null,
+  "plates": {
+    "pegboard": {
+      "status": "ok",
+      "score": 0.4431,
+      "size": "794x622"
+    },
+    "hero-product": {
+      "status": "ok",
+      "score": 0.5968,
+      "size": "1469x1071"
+    },
+    "planter": {
+      "status": "ok",
+      "score": 0.4945,
+      "size": "1536x1024"
+    },
+    "headphone-stand": {
+      "status": "ok",
+      "score": 0.4192,
+      "size": "1536x1024"
+    },
+    "cable-organizer": {
+      "status": "ok",
+      "score": 0.4304,
+      "size": "1536x1024"
+    }
+  }
+}

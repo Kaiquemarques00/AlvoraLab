@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="1060" height="760" viewBox="100 210 1060 760" fill="none">
+  <title>Alvora Lab — versão preta monocromática</title>
+  <desc>Logo monocromático sem fundo. Faces dos triângulos, letras em curvas e linhas laterais independentes, organizadas em grupos nomeados.</desc>
+  
+  <g id="icone" aria-label="Ãcone â€” dois triÃ¢ngulos">
+    <g id="triangulo-maior" aria-label="TriÃ¢ngulo maior â€” faces monocromáticas">
+      <path id="face-lateral-interna-esquerda" d="M627.5 325.5 627.5 338.5 453 643.8Q452 646.1 449 646.3L466.5 596Z" fill="#000000"/>
+      <path id="face-lateral-interna-direita" d="M627.5 325.5 788.5 596 805.5 646.3Q803 646.1 802 643.8L627.5 338.5Z" fill="#000000"/>
+      <path id="face-inferior-esquerda" d="M332 649 466.5 596 453 643.8Q452 646.1 449 646.3Z" fill="#000000" stroke="#000000" stroke-width="1" stroke-linejoin="round"/>
+      <path id="face-inferior-direita" d="M788.5 596 923 649 806 646.3Q803 646.1 802 643.8Z" fill="#000000" stroke="#000000" stroke-width="1" stroke-linejoin="round"/>
+      <path id="face-principal-esquerda" d="M332 649 577 235Q578 233 580 233L627.5 325.5 466.5 596Z" fill="#000000" stroke="#000000" stroke-width="1.4" stroke-linejoin="round"/>
+      <path id="face-principal-direita" d="M627.5 325.5 675 233Q678 233 679 236L923 649 788.5 596Z" fill="#000000" stroke="#000000" stroke-width="1.4" stroke-linejoin="round"/>
+      <path id="face-superior" d="M580 233H675L627.5 325.5Z" fill="#000000" stroke="#000000" stroke-width="1" stroke-linejoin="round"/>
+    </g>
+    <g id="triangulo-menor" aria-label="TriÃ¢ngulo menor â€” faces monocromáticas" stroke-linejoin="round">
+      <path id="face-azul-esquerda" d="M627.5 471 627.5 589 534 642.5Z" fill="#000000" stroke="#000000" stroke-width="1"/>
+      <path id="face-azul-direita" d="M627.5 471 721 642.5 627.5 589Z" fill="#000000" stroke="#000000" stroke-width="1"/>
+      <path id="face-azul-inferior" d="M534 642.5 627.5 589 721 642.5Z" fill="#000000" stroke="#000000" stroke-width="1"/>
+    </g>
+  </g>
+  <g id="alvora" aria-label="ALVORA â€” letras individuais em curvas" fill="#000000">
+    <path id="alvora-a-inicial" d="M121.5 834 184.8 714H211.4L273.8 834H244.8L198.2 744.1 150.8 834Z"/>
+    <path id="alvora-l" d="M315.5 714H342.2V808.8H437.7V834H315.5Z"/>
+    <path id="alvora-v" d="M450 714H480.4L530.3 807.7 581.9 714H611.4L544.6 834H516Z"/>
+    <path id="alvora-o" fill-rule="evenodd" d="M680 714H748Q784 714 784 749V799Q784 834 748 834H680Q643.5 834 643.5 799V749Q643.5 714 680 714ZM681.8 738.8Q670 738.8 670 750.8V797Q670 809 681.8 809H746Q757.7 809 757.7 797V750.8Q757.7 738.8 746 738.8Z"/>
+    <path id="alvora-r" d="M827.6 714H921Q958.5 714 958.5 748V760Q958.5 787.8 927 792.6L962 834H929L895.5 794H854V834H827.6V769.5H920Q932.7 769.5 932.7 757.8V750.5Q932.7 738.8 920 738.8H827.6Z"/>
+    <path id="alvora-a-final" d="M993.6 834 1056.8 714H1083.4L1145 834H1116L1069.3 744.1 1022.9 834Z"/>
+  </g>
+  <g id="assinatura-lab" aria-label="LAB e linhas laterais" fill="#000000">
+    <path id="linha-esquerda" aria-label="Linha esquerda" d="M144.5 915.2 426.5 911.6V919H144.5Z"/>
+    <g id="lab" aria-label="LAB â€” letras individuais em curvas">
+      <path id="lab-l" d="M483 882.5H494.5V939H540.5V950.5H483Z"/>
+      <path id="lab-a" d="M589.8 950.5 621.9 882.5H634L666.5 950.5H654L627.8 896 602.3 950.5Z"/>
+      <path id="lab-b" fill-rule="evenodd" d="M721 882.5H764Q786 882.5 786 901Q786 910.2 777 915Q787 919.8 787 931.6Q787 950.5 765 950.5H721V911H762.8Q774.5 911 774.5 902.5Q774.5 893.8 762.8 893.8H721ZM732.5 921.8V939.3H763.8Q775.4 939.3 775.4 930.5Q775.4 921.8 763.8 921.8Z"/>
+    </g>
+    <path id="linha-direita" aria-label="Linha direita" d="M835 911.6 1119.5 915.2V916.3L835 919Z"/>
+  </g>
+</svg>
