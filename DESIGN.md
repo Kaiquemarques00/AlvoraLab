@@ -129,7 +129,7 @@ The primary action is bold, cobalt, and at least 56px tall, with a right arrow a
 
 ### Cards / Containers
 
-The home carousel uses a full-width, uncropped landscape image above a short information band. Its square-edged frame follows the workshop aesthetic. The active slide is centered and fully opaque, while adjacent slides remain visible. It advances automatically when visible and idle, pauses for interaction and reduced motion, and supports wheel, touch, and button navigation. The images remain the catalog's labeled concepts until real product photography is available; no simulated 3D viewer is implied. Catalog cards have white bodies, and only the photograph scales slightly on hover.
+The home carousel uses a full-width, uncropped landscape image above a short information band. Its square-edged frame follows the workshop aesthetic. Each featured product appears once, with neighboring slides visible at the edges. The home route curates its featured order independently of the catalog so new concepts are visible in the first viewport of the carousel; the introduction states the total number of pieces. It advances automatically in measured steps while visible and idle, reverses direction at the ends, and offers a pause control. Drag, swipe, arrow buttons, and keyboard arrows provide manual navigation; reduced-motion preference starts the exhibition paused. The counter reports available steps at the current viewport width. The images remain the catalog's labeled concepts until real product photography is available; no simulated 3D viewer is implied. Catalog cards have white bodies, and only the photograph scales slightly on hover.
 
 ### Inputs / Fields
 

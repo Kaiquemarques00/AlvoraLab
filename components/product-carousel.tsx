@@ -1,157 +1,142 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
+import { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import AutoScroll from "embla-carousel-auto-scroll";
 import { ArrowIcon } from "@/components/arrow-icon";
 import type { Product } from "@/lib/products";
 
-const MIN_LOOP_SLIDES = 8;
-const RESUME_DELAY = 850;
-
-type LoopProduct = {
-  product: Product;
-  instance: number;
-};
-
 export function ProductCarousel({ products }: { products: Product[] }) {
-  const resumeTimerRef = useRef<number | null>(null);
-  const reducedMotionRef = useRef(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const loopProducts = useMemo<LoopProduct[]>(() => {
-    if (products.length === 0) return [];
-
-    const repetitions = Math.max(1, Math.ceil(MIN_LOOP_SLIDES / products.length));
-    return Array.from({ length: repetitions }, (_, repetition) =>
-      products.map((product, index) => ({
-        product,
-        instance: repetition * products.length + index,
-      })),
-    ).flat();
-  }, [products]);
-
-  const autoScroll = useRef(
-    AutoScroll({
-      speed: 0.72,
-      startDelay: 350,
-      playOnInit: true,
-      stopOnInteraction: false,
-      stopOnMouseEnter: true,
-    }),
-  );
-
+  const showcaseRef = useRef<HTMLElement | null>(null);
+  const [navigation, setNavigation] = useState({ step: 0, count: 1, canPrev: false, canNext: false });
+  const [autoEnabled, setAutoEnabled] = useState(true);
+  const [visible, setVisible] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [touching, setTouching] = useState(false);
+  const autoDirectionRef = useRef<"prev" | "next">("next");
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
-      loop: true,
+      loop: false,
       align: "start",
-      dragFree: true,
-      containScroll: false,
-      skipSnaps: false,
-      duration: 30,
+      containScroll: "trimSnaps",
+      dragFree: false,
     },
-    [autoScroll.current],
-  );
-
-  const clearResumeTimer = useCallback(() => {
-    if (resumeTimerRef.current !== null) {
-      window.clearTimeout(resumeTimerRef.current);
-      resumeTimerRef.current = null;
-    }
-  }, []);
-
-  const resumeAutoScroll = useCallback(
-    (delay = RESUME_DELAY) => {
-      if (!emblaApi || reducedMotionRef.current) return;
-      clearResumeTimer();
-      resumeTimerRef.current = window.setTimeout(() => {
-        emblaApi.plugins().autoScroll?.play(0);
-        resumeTimerRef.current = null;
-      }, delay);
-    },
-    [clearResumeTimer, emblaApi],
   );
 
   const scrollByButton = useCallback(
     (direction: "prev" | "next") => {
-      if (!emblaApi || products.length < 2) return;
-
-      clearResumeTimer();
-      emblaApi.plugins().autoScroll?.stop();
-
+      if (!emblaApi) return;
       if (direction === "prev") emblaApi.scrollPrev();
       else emblaApi.scrollNext();
-
-      resumeAutoScroll();
     },
-    [clearResumeTimer, emblaApi, products.length, resumeAutoScroll],
+    [emblaApi],
   );
-
-  useEffect(() => {
-    if (!emblaApi || products.length === 0) return;
-
-    const updateActiveIndex = () => {
-      const selected = emblaApi.selectedScrollSnap();
-      setActiveIndex(selected % products.length);
-    };
-
-    updateActiveIndex();
-    emblaApi.on("select", updateActiveIndex);
-    emblaApi.on("reInit", updateActiveIndex);
-
-    return () => {
-      emblaApi.off("select", updateActiveIndex);
-      emblaApi.off("reInit", updateActiveIndex);
-    };
-  }, [emblaApi, products.length]);
 
   useEffect(() => {
     if (!emblaApi) return;
 
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const syncMotionPreference = () => {
-      reducedMotionRef.current = media.matches;
-      if (media.matches) emblaApi.plugins().autoScroll?.stop();
-      else emblaApi.plugins().autoScroll?.play(350);
+    const updateNavigation = () => {
+      setNavigation({
+        step: emblaApi.selectedScrollSnap(),
+        count: Math.max(1, emblaApi.scrollSnapList().length),
+        canPrev: emblaApi.canScrollPrev(),
+        canNext: emblaApi.canScrollNext(),
+      });
     };
+
+    updateNavigation();
+    emblaApi.on("select", updateNavigation);
+    emblaApi.on("reInit", updateNavigation);
+
+    return () => {
+      emblaApi.off("select", updateNavigation);
+      emblaApi.off("reInit", updateNavigation);
+    };
+  }, [emblaApi]);
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const syncMotionPreference = () => setAutoEnabled(!media.matches);
 
     syncMotionPreference();
     media.addEventListener("change", syncMotionPreference);
+    return () => media.removeEventListener("change", syncMotionPreference);
+  }, []);
 
-    return () => {
-      media.removeEventListener("change", syncMotionPreference);
-      clearResumeTimer();
-    };
-  }, [clearResumeTimer, emblaApi]);
+  useEffect(() => {
+    const section = showcaseRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0.15 },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!emblaApi || !autoEnabled || !visible || hovered || focused || touching || navigation.count < 2) return;
+
+    const timer = window.setTimeout(() => {
+      if (autoDirectionRef.current === "next" && !emblaApi.canScrollNext()) {
+        autoDirectionRef.current = "prev";
+      } else if (autoDirectionRef.current === "prev" && !emblaApi.canScrollPrev()) {
+        autoDirectionRef.current = "next";
+      }
+
+      if (autoDirectionRef.current === "next") emblaApi.scrollNext();
+      else emblaApi.scrollPrev();
+    }, 1500);
+
+    return () => window.clearTimeout(timer);
+  }, [emblaApi, autoEnabled, visible, hovered, focused, touching, navigation]);
 
   if (products.length === 0) return null;
 
   return (
-    <section className="product-showcase" id="produtos" aria-labelledby="showcase-title">
+    <section className="product-showcase" id="produtos" aria-labelledby="showcase-title" ref={showcaseRef}>
       <div className="product-showcase__top">
         <div>
           <span className="eyebrow">Catálogo</span>
           <h2 id="showcase-title">Peças para olhar de perto.</h2>
-          <p>
-            O catálogo se move continuamente. Arraste com o mouse ou deslize no celular para explorar.
-          </p>
+          <p>{products.length} peças em destaque. Arraste, deslize ou use as setas para explorar.</p>
         </div>
 
         <div className="product-showcase__controls">
-          <span className="product-showcase__counter" aria-live="polite">
-            {String(activeIndex + 1).padStart(2, "0")} / {String(products.length).padStart(2, "0")}
+          <span
+            className="product-showcase__counter"
+            aria-live={autoEnabled ? "off" : "polite"}
+            aria-label={`Etapa ${navigation.step + 1} de ${navigation.count}`}
+          >
+            {String(navigation.step + 1).padStart(2, "0")} / {String(navigation.count).padStart(2, "0")}
           </span>
+          {products.length > 1 && (
+            <button
+              type="button"
+              className="product-showcase__autoplay"
+              onClick={() => setAutoEnabled((enabled) => !enabled)}
+              aria-label={autoEnabled ? "Pausar exposição automática" : "Iniciar exposição automática"}
+              aria-pressed={autoEnabled}
+            >
+              <span aria-hidden="true" />
+              {autoEnabled ? "Exposição ligada" : "Exposição pausada"}
+            </button>
+          )}
           <Link href="/catalogo" className="text-link">
             Ver catálogo completo <ArrowIcon />
           </Link>
           {products.length > 1 && (
-            <div className="product-showcase__arrows" aria-label="Controles secundários do carrossel">
+            <div className="product-showcase__arrows" aria-label="Controles do carrossel">
               <button
                 type="button"
                 className="carousel-button carousel-button--prev"
                 onClick={() => scrollByButton("prev")}
-                aria-label="Produto anterior"
+                aria-label="Etapa anterior"
+                disabled={!navigation.canPrev}
               >
                 <ArrowIcon />
               </button>
@@ -159,7 +144,8 @@ export function ProductCarousel({ products }: { products: Product[] }) {
                 type="button"
                 className="carousel-button"
                 onClick={() => scrollByButton("next")}
-                aria-label="Próximo produto"
+                aria-label="Próxima etapa"
+                disabled={!navigation.canNext}
               >
                 <ArrowIcon />
               </button>
@@ -175,6 +161,15 @@ export function ProductCarousel({ products }: { products: Product[] }) {
         aria-roledescription="carrossel"
         aria-label="Produtos em destaque"
         tabIndex={0}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        onFocusCapture={() => setFocused(true)}
+        onBlurCapture={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
+        }}
+        onTouchStart={() => setTouching(true)}
+        onTouchEnd={() => setTouching(false)}
+        onTouchCancel={() => setTouching(false)}
         onKeyDown={(event) => {
           if (event.key === "ArrowLeft") {
             event.preventDefault();
@@ -187,20 +182,20 @@ export function ProductCarousel({ products }: { products: Product[] }) {
         }}
       >
         <div className="product-showcase__track">
-          {loopProducts.map(({ product, instance }) => (
+          {products.map((product) => (
             <Link
               href={`/produto/${product.slug}`}
               className="product-slide"
-              key={`${product.slug}-${instance}`}
+              key={product.slug}
               aria-label={`Ver ${product.name}`}
             >
               <div className="product-slide__image">
-                <img src={product.image} alt={product.imageAlt} draggable={false} />
+                <Image src={product.image} alt={product.imageAlt} fill sizes="(max-width: 700px) 84vw, (max-width: 1200px) 40vw, 28vw" loading="lazy" draggable={false} />
               </div>
               <div className="product-slide__body">
                 <div className="product-slide__meta">
                   <span>{product.category}</span>
-                  <span>{product.material || "Impressão 3D"}</span>
+                  <span>{product.status === "demo" ? "Conceito" : product.material || "Impressão 3D"}</span>
                 </div>
                 <div className="product-slide__details">
                   <h3>{product.name}</h3>

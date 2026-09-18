@@ -72,6 +72,7 @@
 :root[data-theme="dark"] .product-slide{background:#11162e;border-color:#303958}
 :root[data-theme="dark"] .product-slide__image{background:#f4f5f9}
 :root[data-theme="dark"] .carousel-button{background:#11162e;color:#fff;border-color:#303958}
+:root[data-theme="dark"] .product-showcase__autoplay{background:#11162e;color:#fff;border-color:#303958}
 :root[data-theme="dark"] .product-carousel-shell::before{background:linear-gradient(90deg,#080b18,transparent)}
 :root[data-theme="dark"] .product-carousel-shell::after{background:linear-gradient(-90deg,#080b18,transparent)}
 
@@ -123,6 +124,8 @@
 :root[data-theme="dark"] .direct-contact,:root[data-theme="dark"] .direct-contact>div{border-color:#303958}
 
 /* Controls */
+:root[data-theme="dark"] .button--primary{background:var(--brand-dark)}
+:root[data-theme="dark"] .button--primary:hover{background:#2e49db}
 :root[data-theme="dark"] .button--secondary{color:#edf0fb;border-color:#4d598b}
 :root[data-theme="dark"] .button--secondary:hover{color:#aeb8ff;border-color:#6379ff;background:rgba(99,121,255,.08)}
 :root[data-theme="dark"] .button--disabled{background:#171c36;color:#8f99b7;border-color:#303958}
@@ -167,3 +170,13 @@
 :root[data-theme="dark"] .theme-toggle__track{background:#0b1026}
 :root[data-theme="dark"] .theme-toggle__thumb{background:#6379ff;box-shadow:0 4px 14px rgba(99,121,255,.34)}
 :root[data-theme="dark"] .theme-toggle:hover{background:#101633;border-color:#6379ff}
+
+:root[data-theme="dark"] .catalog-filters button.is-active{
+  background:var(--accent-wash);
+  color:var(--accent-wash-ink);
+  border-color:var(--accent-wash-line);
+}
+:root[data-theme="dark"] .quote-form input[aria-invalid="true"]{
+  background:var(--error-surface);
+  border-color:var(--error-line);
+}

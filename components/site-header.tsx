@@ -8,7 +8,7 @@ export function SiteHeader() {
   return <header className="site-header">
     <Link href="/" className="brand" aria-label="Alvora Lab, página inicial"><img src="/alvora-mark.svg" alt="" className="brand__mark" /><span className="brand__name">ALVORA <span className="brand__lab">LAB</span></span></Link>
     <nav className="site-nav" aria-label="Navegação principal"><Link href="/catalogo">Catálogo</Link><Link href="/personalizados">Personalizados</Link><Link href="/empresas">Para empresas</Link><Link href="/sobre">Sobre</Link></nav>
-    <div className="site-header__actions"><ThemeToggle /><Link className="header-quote" href="/personalizados#orcamento">Solicitar orçamento <ArrowIcon /></Link><MobileMenu /></div>
+    <div className="site-header__actions"><ThemeToggle /><Link className="header-quote" href="/personalizados#orcamento">Formulário de orçamento <ArrowIcon /></Link><MobileMenu /></div>
   </header>;
 }
 
