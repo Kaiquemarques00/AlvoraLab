@@ -28,6 +28,7 @@ export function ProductCarousel({ products }: { products: Product[] }) {
   const scrollByButton = useCallback(
     (direction: "prev" | "next") => {
       if (!emblaApi) return;
+      setAutoEnabled(false);
       if (direction === "prev") emblaApi.scrollPrev();
       else emblaApi.scrollNext();
     },
@@ -90,7 +91,7 @@ export function ProductCarousel({ products }: { products: Product[] }) {
 
       if (autoDirectionRef.current === "next") emblaApi.scrollNext();
       else emblaApi.scrollPrev();
-    }, 1500);
+    }, 4000);
 
     return () => window.clearTimeout(timer);
   }, [emblaApi, autoEnabled, visible, hovered, focused, touching, navigation]);
@@ -161,6 +162,7 @@ export function ProductCarousel({ products }: { products: Product[] }) {
         aria-roledescription="carrossel"
         aria-label="Produtos em destaque"
         tabIndex={0}
+        onPointerDown={() => setAutoEnabled(false)}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onFocusCapture={() => setFocused(true)}
@@ -210,6 +212,12 @@ export function ProductCarousel({ products }: { products: Product[] }) {
           ))}
         </div>
       </div>
+
+      {navigation.count > 1 && (
+        <div className="product-showcase__progress" aria-hidden="true">
+          <span style={{ transform: `scaleX(${(navigation.step + 1) / navigation.count})` }} />
+        </div>
+      )}
 
       <div className="product-showcase__mobile-hint" aria-hidden="true">
         <span>Deslize para explorar</span>

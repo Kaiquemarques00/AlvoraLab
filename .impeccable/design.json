@@ -1,92 +1,512 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-16T18:13:03Z",
+  "generatedAt": "2026-09-18T17:43:40Z",
   "title": "Design System: Alvora Lab",
   "extensions": {
     "colorMeta": {
-      "cobalt": { "role": "primary", "displayName": "Cobalt", "canonical": "#2452df" },
-      "cobalt-hover": { "role": "primary", "displayName": "Deep cobalt", "canonical": "#173fc2" },
-      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#202a31" },
-      "muted": { "role": "neutral", "displayName": "Muted ink", "canonical": "#505d68" },
-      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#f8fafa" },
-      "white": { "role": "neutral", "displayName": "White", "canonical": "#ffffff" },
-      "pegboard": { "role": "neutral", "displayName": "Pegboard", "canonical": "#dde4ea" },
-      "panel": { "role": "neutral", "displayName": "Filter panel", "canonical": "#e8eef3" },
-      "photo-bed": { "role": "neutral", "displayName": "Photo bed", "canonical": "#e8edf1" },
-      "divider": { "role": "neutral", "displayName": "Divider", "canonical": "#dce2e6" },
-      "selected-filter": { "role": "neutral", "displayName": "Selected filter", "canonical": "#d5e3f9" },
-      "selected-filter-ink": { "role": "primary", "displayName": "Selected filter ink", "canonical": "#1749d2" },
-      "disabled-fill": { "role": "neutral", "displayName": "Disabled fill", "canonical": "#dce2e7" },
-      "disabled-ink": { "role": "neutral", "displayName": "Disabled ink", "canonical": "#5b6871" }
+      "brand-light": {
+        "role": "primary",
+        "displayName": "Azul elétrico claro",
+        "canonical": "#163bff",
+        "tonalRamp": [
+          "#010035",
+          "#04007a",
+          "#0c00c8",
+          "#1539fd",
+          "#4375ff",
+          "#79a1ff",
+          "#b0c9ff",
+          "#e7efff"
+        ]
+      },
+      "brand-hover-light": {
+        "role": "primary",
+        "displayName": "Azul elétrico profundo",
+        "canonical": "#0818b7",
+        "tonalRamp": [
+          "#010035",
+          "#03007b",
+          "#091dba",
+          "#1f4be2",
+          "#4375ff",
+          "#79a1ff",
+          "#b0c9ff",
+          "#e7efff"
+        ]
+      },
+      "brand-dark": {
+        "role": "primary",
+        "displayName": "Azul elétrico noturno",
+        "canonical": "#6379ff",
+        "tonalRamp": [
+          "#050032",
+          "#150075",
+          "#2825a9",
+          "#404dcf",
+          "#5d72f7",
+          "#879dff",
+          "#b7c6ff",
+          "#e9eeff"
+        ]
+      },
+      "action-dark": {
+        "role": "primary",
+        "displayName": "Ação no tema escuro",
+        "canonical": "#3654ff",
+        "tonalRamp": [
+          "#020034",
+          "#0c0078",
+          "#1b00c4",
+          "#2b41ed",
+          "#4e73ff",
+          "#7fa0ff",
+          "#b3c8ff",
+          "#e8eeff"
+        ]
+      },
+      "action-hover-dark": {
+        "role": "primary",
+        "displayName": "Ação noturna em hover",
+        "canonical": "#2e49db",
+        "tonalRamp": [
+          "#020034",
+          "#0c0078",
+          "#1a1fb5",
+          "#2f4bdd",
+          "#4d73ff",
+          "#7fa0ff",
+          "#b3c8ff",
+          "#e8eeff"
+        ]
+      },
+      "brand-soft": {
+        "role": "primary",
+        "displayName": "Azul de apoio",
+        "canonical": "#8697ff",
+        "tonalRamp": [
+          "#060031",
+          "#180a6c",
+          "#2f3291",
+          "#4a55b6",
+          "#6977dc",
+          "#8b9cff",
+          "#b9c6ff",
+          "#e9eeff"
+        ]
+      },
+      "paper-light": {
+        "role": "neutral",
+        "displayName": "Papel claro",
+        "canonical": "#f7f8fc",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#242528",
+          "#414245",
+          "#606164",
+          "#818286",
+          "#a4a5a8",
+          "#c8c9cd",
+          "#edeef2"
+        ]
+      },
+      "surface-light": {
+        "role": "neutral",
+        "displayName": "Superfície branca",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "surface-soft-light": {
+        "role": "neutral",
+        "displayName": "Camada clara",
+        "canonical": "#f0f1f8",
+        "tonalRamp": [
+          "#0a0b0f",
+          "#24252a",
+          "#414247",
+          "#606167",
+          "#818288",
+          "#a4a4ab",
+          "#c8c9cf",
+          "#edeef5"
+        ]
+      },
+      "ink-light": {
+        "role": "neutral",
+        "displayName": "Texto claro",
+        "canonical": "#353b51",
+        "tonalRamp": [
+          "#06091b",
+          "#1e2438",
+          "#3b4157",
+          "#596078",
+          "#7a819a",
+          "#9ca4be",
+          "#c0c8e3",
+          "#e9eeff"
+        ]
+      },
+      "ink-strong-light": {
+        "role": "neutral",
+        "displayName": "Título claro",
+        "canonical": "#202438",
+        "tonalRamp": [
+          "#07091b",
+          "#202437",
+          "#3c4156",
+          "#5b6077",
+          "#7b819a",
+          "#9ea4bd",
+          "#c1c8e2",
+          "#e9eeff"
+        ]
+      },
+      "muted-light": {
+        "role": "neutral",
+        "displayName": "Texto de apoio claro",
+        "canonical": "#646b81",
+        "tonalRamp": [
+          "#060a1a",
+          "#1f2437",
+          "#3b4155",
+          "#5a6076",
+          "#7a8298",
+          "#9da4bc",
+          "#c0c8e1",
+          "#e8eeff"
+        ]
+      },
+      "line-light": {
+        "role": "neutral",
+        "displayName": "Divisão clara",
+        "canonical": "#d8dbe5",
+        "tonalRamp": [
+          "#090b11",
+          "#23252c",
+          "#3f424a",
+          "#5e6169",
+          "#7f828b",
+          "#a2a5ae",
+          "#c6c9d3",
+          "#ebeef8"
+        ]
+      },
+      "paper-dark": {
+        "role": "neutral",
+        "displayName": "Fundo noturno",
+        "canonical": "#080b18",
+        "tonalRamp": [
+          "#070a17",
+          "#202433",
+          "#3d4151",
+          "#5b6172",
+          "#7c8294",
+          "#9fa4b7",
+          "#c2c8dc",
+          "#e9eeff"
+        ]
+      },
+      "surface-dark": {
+        "role": "neutral",
+        "displayName": "Superfície noturna",
+        "canonical": "#11162e",
+        "tonalRamp": [
+          "#06081f",
+          "#1d233c",
+          "#39405c",
+          "#58607d",
+          "#7881a0",
+          "#9ba4c4",
+          "#bec8e9",
+          "#e9eeff"
+        ]
+      },
+      "surface-soft-dark": {
+        "role": "neutral",
+        "displayName": "Camada noturna",
+        "canonical": "#171c36",
+        "tonalRamp": [
+          "#060820",
+          "#1d233d",
+          "#39405d",
+          "#585f7e",
+          "#7881a1",
+          "#9ba3c5",
+          "#bec8eb",
+          "#e9eeff"
+        ]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Texto noturno",
+        "canonical": "#edf0fb",
+        "tonalRamp": [
+          "#090b12",
+          "#23252d",
+          "#3f424a",
+          "#5e616a",
+          "#7f828c",
+          "#a2a5af",
+          "#c6c9d3",
+          "#ebeef9"
+        ]
+      },
+      "muted-dark": {
+        "role": "neutral",
+        "displayName": "Texto de apoio noturno",
+        "canonical": "#b7bfd4",
+        "tonalRamp": [
+          "#060a18",
+          "#1f2434",
+          "#3b4253",
+          "#5a6173",
+          "#7b8296",
+          "#9da5b9",
+          "#c1c9de",
+          "#e8eeff"
+        ]
+      },
+      "line-dark": {
+        "role": "neutral",
+        "displayName": "Divisão noturna",
+        "canonical": "#303958",
+        "tonalRamp": [
+          "#050822",
+          "#1b2340",
+          "#374060",
+          "#556081",
+          "#7681a4",
+          "#98a4c9",
+          "#bbc8ee",
+          "#e8eeff"
+        ]
+      },
+      "image-bed-dark": {
+        "role": "neutral",
+        "displayName": "Leito de imagem",
+        "canonical": "#f4f5f9",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#242528",
+          "#414245",
+          "#606164",
+          "#818286",
+          "#a4a5a8",
+          "#c8c9cd",
+          "#edeef2"
+        ]
+      },
+      "accent-wash-light": {
+        "role": "primary",
+        "displayName": "Seleção clara",
+        "canonical": "#e9efff",
+        "tonalRamp": [
+          "#080b15",
+          "#212530",
+          "#3d424e",
+          "#5c616e",
+          "#7d8290",
+          "#9fa5b4",
+          "#c3c9d8",
+          "#e8eefe"
+        ]
+      },
+      "accent-wash-dark": {
+        "role": "primary",
+        "displayName": "Seleção noturna",
+        "canonical": "#1c254c",
+        "tonalRamp": [
+          "#040529",
+          "#192148",
+          "#343f69",
+          "#525f8b",
+          "#7280ae",
+          "#94a3d3",
+          "#b8c7f9",
+          "#e8eeff"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Hero statement." },
-      "headline": { "displayName": "Headline", "purpose": "Catalog and section headings." },
-      "body": { "displayName": "Body", "purpose": "Explanations and summaries." },
-      "label": { "displayName": "Label", "purpose": "Product category and concept status." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Afirmação principal da landing page."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de seção, catálogo e páginas de serviço."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de cartões e grupos de conteúdo."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Explicações, descrições e formulários."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Sobrancelhas, índices e metadados curtos."
+      }
     },
     "shadows": [
-      { "name": "primary-action", "value": "0 8px 20px rgba(19,56,140,.18)", "purpose": "Soft lift only under the primary button." }
+      {
+        "name": "card-hover-light",
+        "value": "0 18px 50px rgba(53,59,81,.10)",
+        "purpose": "Elevação de cartão em hover no tema claro."
+      },
+      {
+        "name": "card-hover-dark",
+        "value": "0 22px 58px rgba(0,0,0,.32)",
+        "purpose": "Elevação de cartão em hover no tema escuro."
+      },
+      {
+        "name": "primary-action",
+        "value": "0 10px 25px rgba(22,59,255,.20)",
+        "purpose": "Destaque do botão principal claro."
+      },
+      {
+        "name": "mobile-menu",
+        "value": "-20px 30px 70px rgba(0,0,0,.18)",
+        "purpose": "Separação do painel móvel aberto."
+      }
     ],
     "motion": [
-      { "name": "action-arrow", "value": "transform .25s cubic-bezier(.2,.8,.2,1)", "purpose": "Arrow moves right on primary-button hover." },
-      { "name": "product-image", "value": "transform .4s cubic-bezier(.2,.8,.2,1)", "purpose": "Product image scales inside a clipped card on hover." },
-      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "Disables transitions, animations, and smooth scrolling." }
+      {
+        "name": "card-response",
+        "value": "transform .3s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Elevação e traço inferior durante hover em dispositivos com ponteiro."
+      },
+      {
+        "name": "theme-transition",
+        "value": "background-color .32s ease, color .32s ease, border-color .32s ease",
+        "purpose": "Continuidade visual ao alternar tema."
+      },
+      {
+        "name": "carousel-progress",
+        "value": "transform .45s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Linha acompanha a etapa manual ou automática."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Pausa a exposição automática inicial e remove transições e animações relevantes."
+      }
     ],
     "breakpoints": [
-      { "name": "wide-to-medium", "value": "1100px" },
-      { "name": "mobile", "value": "700px" },
-      { "name": "narrow-mobile", "value": "420px" }
+      {
+        "name": "mobile-navigation",
+        "value": "1050px"
+      },
+      {
+        "name": "carousel-heading",
+        "value": "900px"
+      },
+      {
+        "name": "single-column",
+        "value": "700px"
+      },
+      {
+        "name": "narrow-carousel",
+        "value": "390px"
+      }
     ]
   },
   "components": [
     {
-      "name": "Primary Button",
+      "name": "Botão principal",
       "kind": "button",
-      "refersTo": "button-primary",
-      "description": "Main catalog action with a directional arrow.",
-      "html": "<button class=\"ds-button-primary\" type=\"button\">Explorar produtos <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
-      "css": ".ds-button-primary{display:inline-flex;align-items:center;justify-content:center;gap:28px;min-height:56px;padding:13px 23px;border:0;border-radius:6px;background:#2452df;color:#fff;box-shadow:0 8px 20px rgba(19,56,140,.18);font:700 16px Rambla,Arial,sans-serif;cursor:pointer}.ds-button-primary svg{width:21px;height:21px;transition:transform .25s cubic-bezier(.2,.8,.2,1)}.ds-button-primary:hover{background:#173fc2}.ds-button-primary:hover svg{transform:translateX(5px)}.ds-button-primary:focus-visible{outline:3px solid #2452df;outline-offset:4px}"
+      "refersTo": "button-primary-light",
+      "description": "Ação principal com seta e foco visível.",
+      "html": "<button class=\"ds-button-primary\" type=\"button\">Ver catálogo <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
+      "css": ".ds-button-primary{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:54px;padding:13px 21px;border:1px solid transparent;border-radius:7px;background:var(--brand,#163bff);color:#fff;box-shadow:0 10px 25px rgba(22,59,255,.20);font:700 16px Rambla,Arial,sans-serif;cursor:pointer;transition:background .2s,transform .2s}.ds-button-primary svg{width:21px;height:21px;transition:transform .25s cubic-bezier(.2,.8,.2,1)}.ds-button-primary:hover{background:var(--brand-dark,#0818b7);transform:translateY(-1px)}.ds-button-primary:hover svg{transform:translateX(4px)}.ds-button-primary:focus-visible{outline:3px solid var(--brand-soft,#8697ff);outline-offset:4px}"
     },
     {
-      "name": "Search Field",
+      "name": "Botão secundário",
+      "kind": "button",
+      "refersTo": "button-secondary-light",
+      "description": "Ação complementar de contorno e superfície transparente.",
+      "html": "<button class=\"ds-button-secondary\" type=\"button\">Quero algo personalizado <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
+      "css": ".ds-button-secondary{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:54px;padding:13px 21px;border:1px solid #adb1bd;border-radius:7px;background:transparent;color:var(--ink-strong,#202438);font:700 16px Rambla,Arial,sans-serif;cursor:pointer;transition:border-color .2s,color .2s,transform .2s}.ds-button-secondary svg{width:21px;height:21px;transition:transform .25s cubic-bezier(.2,.8,.2,1)}.ds-button-secondary:hover{border-color:var(--brand,#163bff);color:var(--brand,#163bff);transform:translateY(-1px)}.ds-button-secondary:hover svg{transform:translateX(4px)}.ds-button-secondary:focus-visible{outline:3px solid var(--brand-soft,#8697ff);outline-offset:4px}"
+    },
+    {
+      "name": "Busca do catálogo",
       "kind": "input",
-      "refersTo": "search-field",
-      "description": "Catalog search in the cool filter panel.",
-      "html": "<label class=\"ds-search-field\"><svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><circle cx=\"10.8\" cy=\"10.8\" r=\"6.5\" stroke=\"currentColor\" stroke-width=\"1.8\"/><path d=\"m16 16 4.7 4.7\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/></svg><input type=\"search\" aria-label=\"Buscar produtos\" placeholder=\"Buscar produtos\"/></label>",
-      "css": ".ds-search-field{height:50px;display:flex;align-items:center;gap:10px;padding:0 13px;border-radius:6px;background:#fff;color:#526473;font:400 16px Rambla,Arial,sans-serif}.ds-search-field svg{width:19px;height:19px;flex:none}.ds-search-field input{width:100%;border:0;outline:0;background:transparent;color:#202a31;font:inherit}.ds-search-field:focus-within{outline:2px solid #2452df}"
+      "refersTo": "search-field-light",
+      "description": "Campo de busca sobre uma camada neutra, com foco na borda.",
+      "html": "<label class=\"ds-search\"><svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><circle cx=\"10.8\" cy=\"10.8\" r=\"6.5\" stroke=\"currentColor\" stroke-width=\"1.8\"/><path d=\"m16 16 4.7 4.7\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/></svg><input type=\"search\" aria-label=\"Buscar produtos\" placeholder=\"Buscar produtos\"/></label>",
+      "css": ".ds-search{height:48px;width:290px;display:flex;align-items:center;gap:9px;padding:0 13px;border:1px solid var(--line,#d8dbe5);border-radius:7px;background:var(--surface-soft,#f0f1f8);color:var(--muted,#646b81);font:400 16px Rambla,Arial,sans-serif}.ds-search svg{width:19px;height:19px;flex:none}.ds-search input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--ink,#353b51);font:inherit}.ds-search:focus-within{border-color:var(--brand,#163bff)}"
     },
     {
-      "name": "Category Filter",
+      "name": "Filtro ativo",
       "kind": "chip",
-      "refersTo": "filter-active",
-      "description": "Selectable catalog category with a pale blue active state.",
-      "html": "<button class=\"ds-filter\" type=\"button\" aria-pressed=\"true\">Decoração <svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
-      "css": ".ds-filter{display:flex;align-items:center;justify-content:space-between;gap:20px;min-width:180px;padding:15px 16px;border:0;border-radius:7px;background:#d5e3f9;color:#1749d2;text-align:left;font:700 16px Rambla,Arial,sans-serif;cursor:pointer}.ds-filter svg{width:16px;height:16px;transform:rotate(-45deg);opacity:.55}.ds-filter:hover{background:#dbe5ee}.ds-filter:focus-visible{outline:3px solid #2452df;outline-offset:4px}"
+      "refersTo": "filter-active-light",
+      "description": "Categoria selecionada com lavagem azul, borda e texto próprios.",
+      "html": "<button class=\"ds-filter\" type=\"button\" aria-pressed=\"true\">Organização</button>",
+      "css": ".ds-filter{padding:9px 13px;border:1px solid var(--accent-wash-line,#c8d5ff);border-radius:999px;background:var(--accent-wash,#e9efff);color:var(--accent-wash-ink,#1749d2);font:700 13px Rambla,Arial,sans-serif;cursor:pointer;transition:border-color .2s,background .2s}.ds-filter:hover{border-color:var(--brand,#163bff)}.ds-filter:focus-visible{outline:3px solid var(--brand-soft,#8697ff);outline-offset:4px}"
     },
     {
-      "name": "Product Card",
+      "name": "Cartão de catálogo",
       "kind": "card",
-      "description": "Flat catalog item with a cropped object image and short metadata.",
-      "html": "<a class=\"ds-product-card\" href=\"#\"><div class=\"ds-product-card-photo\"><svg viewBox=\"0 0 160 120\" role=\"img\" aria-label=\"Representação de peça\"><path d=\"M38 88V44l42-23 42 23v44l-42 23z\" fill=\"#2452df\"/><path d=\"m38 44 42 24 42-24M80 68v43\" fill=\"none\" stroke=\"#173fc2\" stroke-width=\"3\"/></svg></div><div class=\"ds-product-card-body\"><span>Decoração · Produto conceito</span><strong>Peça conceito</strong></div></a>",
-      "css": ".ds-product-card{display:block;width:260px;background:#fff;color:#202a31;text-decoration:none;font-family:Rambla,Arial,sans-serif}.ds-product-card-photo{height:265px;display:grid;place-items:center;overflow:hidden;background:#e8edf1}.ds-product-card-photo svg{width:65%;transition:transform .4s cubic-bezier(.2,.8,.2,1)}.ds-product-card:hover .ds-product-card-photo svg{transform:scale(1.04)}.ds-product-card-body{display:flex;flex-direction:column;gap:5px;padding:14px 10px 18px}.ds-product-card-body span{font-size:13px;color:#687582}.ds-product-card-body strong{font-size:20px}.ds-product-card:focus-visible{outline:3px solid #2452df;outline-offset:4px}"
+      "description": "Peça em leito de imagem neutro com nome e resumo em área de leitura.",
+      "html": "<a class=\"ds-card\" href=\"#\"><div class=\"ds-card-photo\"><svg viewBox=\"0 0 160 120\" role=\"img\" aria-label=\"Representação de peça\"><path d=\"M38 88V44l42-23 42 23v44l-42 23z\" fill=\"#163bff\"/><path d=\"m38 44 42 24 42-24M80 68v43\" fill=\"none\" stroke=\"#0818b7\" stroke-width=\"3\"/></svg></div><div class=\"ds-card-body\"><span>CASA &amp; DECORAÇÃO · CONCEITO</span><strong>Vaso Modular</strong><p>Forma e textura para o ambiente.</p></div></a>",
+      "css": ".ds-card{display:block;width:280px;border:1px solid var(--line,#d8dbe5);background:var(--surface,#fff);color:var(--ink,#353b51);text-decoration:none;font-family:Rambla,Arial,sans-serif;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s}.ds-card-photo{aspect-ratio:4/3;display:grid;place-items:center;overflow:hidden;background:var(--surface-soft,#f0f1f8)}.ds-card-photo svg{width:62%;transition:transform .3s}.ds-card-body{padding:21px 22px 25px}.ds-card-body span{display:block;color:var(--brand,#163bff);font-size:12px;font-weight:700;letter-spacing:.1em}.ds-card-body strong{display:block;margin:7px 0 8px;font-size:25px;line-height:1.08}.ds-card-body p{margin:0;color:var(--muted,#646b81);font-size:16px;line-height:1.45}.ds-card:hover{transform:translateY(-5px);box-shadow:var(--shadow,0 18px 50px rgba(53,59,81,.10))}.ds-card:hover .ds-card-photo svg{transform:scale(1.045)}.ds-card:focus-visible{outline:3px solid var(--brand-soft,#8697ff);outline-offset:4px}"
     },
     {
-      "name": "Header Navigation",
+      "name": "Navegação do cabeçalho",
       "kind": "nav",
-      "description": "Compact text navigation aligned to the right of the brand.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"Navegação principal\"><a href=\"#\">Produtos</a><a href=\"#\">Soluções</a><a href=\"#\">Sobre</a></nav>",
-      "css": ".ds-nav{display:flex;gap:38px;background:#fff;color:#202a31;font:400 15px Rambla,Arial,sans-serif}.ds-nav a{color:inherit;text-decoration:none;text-underline-offset:6px}.ds-nav a:hover{text-decoration:underline}.ds-nav a:focus-visible{outline:3px solid #2452df;outline-offset:4px}@media(max-width:700px){.ds-nav{gap:13px;font-size:13px}.ds-nav a:nth-child(2){display:none}}"
+      "description": "Links compactos ao lado da marca, com foco visível.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Navegação principal\"><a href=\"#\">Catálogo</a><a href=\"#\">Personalizados</a><a href=\"#\">Para empresas</a><a href=\"#\">Sobre</a></nav>",
+      "css": ".ds-nav{display:flex;gap:28px;align-items:center;padding:16px 18px;background:var(--surface,#fff);color:var(--ink,#353b51);font:700 14px Rambla,Arial,sans-serif}.ds-nav a{color:inherit;text-decoration:none}.ds-nav a:hover{color:var(--brand,#163bff)}.ds-nav a:focus-visible{outline:3px solid var(--brand-soft,#8697ff);outline-offset:4px}"
+    },
+    {
+      "name": "Progresso da vitrine",
+      "kind": "custom",
+      "description": "Contador e linha que acompanham a etapa do carrossel.",
+      "html": "<div class=\"ds-carousel-progress\" aria-label=\"Etapa 2 de 6\"><span>02 / 06</span><div aria-hidden=\"true\"><i></i></div></div>",
+      "css": ".ds-carousel-progress{width:280px;color:var(--muted,#646b81);font:400 11px Rambla,Arial,sans-serif;letter-spacing:.13em}.ds-carousel-progress>div{height:2px;margin-top:12px;background:var(--line,#d8dbe5);overflow:hidden}.ds-carousel-progress i{display:block;width:33.333%;height:100%;background:var(--brand,#163bff);transition:width .45s cubic-bezier(.16,1,.3,1)}@media(prefers-reduced-motion:reduce){.ds-carousel-progress i{transition:none}}"
     }
   ],
   "narrative": {
-    "northStar": "Oficina de peças",
-    "overview": "A tidy workbench for 3D printed objects, with pale pegboard, cool metal-like surfaces, large imagery, and concise labels. Rambla is direct and sturdy; cobalt marks actions and selection. Flat cards rely on image scale, alignment, and tonal separation for hierarchy.",
-    "keyCharacteristics": ["Object-led imagery on cool backgrounds", "Cobalt for actions and selected states", "Square panels and gently rounded controls", "Compact product labels and large headings"],
-    "rules": [
-      { "name": "The One Accent Rule", "body": "Use cobalt for actions and active states; let product imagery supply other strong color.", "section": "colors" }
+    "northStar": "Laboratório de objetos",
+    "overview": "A interface apresenta fabricação digital com precisão e proximidade: peças reais e conceitos ocupam o centro, enquanto tipografia forte, linhas finas e o azul elétrico orientam a leitura. O tom é tecnológico, claro e preciso. Controles devem parecer precisos e táteis.\n\nO sistema tem temas claro e escuro equivalentes. O tema segue a preferência do sistema na primeira visita e pode ser alterado e salvo pelo usuário. Seções alternam superfícies claras, painéis azul escuro e imagens em leitos neutros. O palco tridimensional e a abertura animada pertencem à landing page; não são moldes para todas as páginas.",
+    "keyCharacteristics": [
+      "Imagem de produto em primeiro plano, com metadados curtos e objetivos.",
+      "Azul elétrico para ação, seleção, foco e progresso.",
+      "Superfícies retangulares separadas por tom e borda; controles suavemente arredondados.",
+      "Movimento ligado a navegação e resposta de interação, com alternativa para movimento reduzido."
     ],
-    "dos": ["Do keep product imagery prominent on pale, cool image beds.", "Do use cobalt for actionable and selected states with a visible focus outline.", "Do identify concept products plainly until real product information is available."],
-    "donts": ["Don't add unsupported material, performance, or purchase claims.", "Don't add card shadows or heavy rounded containers to the flat catalog treatment.", "Don't promote the home hero's exact composition into a rule for every page."]
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "Reserve o azul forte para ações e estados; a cor das peças deve continuar sendo percebida como conteúdo.",
+        "section": "colors"
+      },
+      {
+        "name": "The Layer First Rule",
+        "body": "Comece com contraste tonal e borda; use elevação para indicar ação ou sobreposição.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do manter a imagem da peça maior que seus metadados e colocá-la sobre um fundo que preserve sua leitura nos dois temas.",
+      "Do usar o azul elétrico para ações, foco e progresso, com estados de texto e borda legíveis.",
+      "Do manter comportamento, contraste e mensagens equivalentes nos temas claro e escuro.",
+      "Do dar significado a movimento por meio de uma mudança de estado perceptível e respeitar movimento reduzido."
+    ],
+    "donts": [
+      "Don't transformar a composição exata do hero ou seu palco tridimensional em um padrão obrigatório para novas páginas.",
+      "Don't esconder slides do carrossel atrás de efeitos de entrada por rolagem.",
+      "Don't usar sombra permanente como única forma de separar cartões comuns.",
+      "Don't tratar peças marcadas como conceito visualmente como itens já disponíveis para compra."
+    ]
   }
 }

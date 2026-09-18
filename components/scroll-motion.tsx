@@ -6,7 +6,6 @@ const selectors = [
   "main > section:not(:first-child)",
   ".journey-card",
   ".category-card",
-  ".product-slide",
   ".production-points article",
   ".catalog-card",
   ".capability-grid article",

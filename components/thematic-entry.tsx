@@ -15,9 +15,9 @@ export function ThematicEntry() {
 
     // O RootLayout persiste durante a navegação interna do App Router, portanto
     // a entrada reaparece em um novo carregamento real sem repetir entre páginas.
-    const openTimer = window.setTimeout(() => setOpening(true), 1650);
-    const closeTimer = window.setTimeout(() => setVisible(false), 2550);
-    const safetyTimer = window.setTimeout(() => setVisible(false), 4200);
+    const openTimer = window.setTimeout(() => setOpening(true), 900);
+    const closeTimer = window.setTimeout(() => setVisible(false), 1500);
+    const safetyTimer = window.setTimeout(() => setVisible(false), 2500);
     return () => {
       window.clearTimeout(openTimer);
       window.clearTimeout(closeTimer);

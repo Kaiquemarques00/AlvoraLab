@@ -31,6 +31,7 @@ const faces = [...extrude(silver,"#646B81","#4D598B"),...extrude(blue,"#163BFF",
 export function BrandHeroMark() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
+  const requestRender = useRef<() => void>(() => {});
   const motion = useRef({ yaw:-.25, pitch:-.08, dragging:false, pointer:-1, x:0, y:0, resume:0, paused:false });
   const [paused,setPaused] = useState(false);
 
@@ -47,6 +48,7 @@ export function BrandHeroMark() {
       const ratio = Math.min(devicePixelRatio || 1,2);
       canvas.width = Math.round(width*ratio); canvas.height = Math.round(height*ratio);
       ctx.setTransform(ratio,0,0,ratio,0,0);
+      requestRender.current();
     });
     resize.observe(canvas);
     const render = (now: number) => {
@@ -76,14 +78,34 @@ export function BrandHeroMark() {
         ctx.stroke();
       }
       stage.dataset.ready="true";
-      frame=requestAnimationFrame(render);
+      frame = visible && !document.hidden && (m.dragging || (!m.paused && !reduced.matches))
+        ? requestAnimationFrame(render)
+        : 0;
     };
-    const start = () => { cancelAnimationFrame(frame); if(visible && !document.hidden) { last=performance.now(); frame=requestAnimationFrame(render); } };
+    const start = () => {
+      if (!visible || document.hidden) {
+        cancelAnimationFrame(frame);
+        frame = 0;
+        return;
+      }
+      if (frame) return;
+      last = performance.now();
+      frame = requestAnimationFrame(render);
+    };
+    requestRender.current = start;
     const observer = new IntersectionObserver(([entry]) => { visible=entry.isIntersecting; start(); });
     observer.observe(stage);
     document.addEventListener("visibilitychange",start);
+    reduced.addEventListener("change",start);
     start();
-    return () => { cancelAnimationFrame(frame); resize.disconnect(); observer.disconnect(); document.removeEventListener("visibilitychange",start); };
+    return () => {
+      cancelAnimationFrame(frame);
+      resize.disconnect();
+      observer.disconnect();
+      document.removeEventListener("visibilitychange",start);
+      reduced.removeEventListener("change",start);
+      requestRender.current = () => {};
+    };
   }, []);
 
   function release() {
@@ -106,6 +128,7 @@ export function BrandHeroMark() {
         Object.assign(motion.current,{dragging:true,pointer:event.pointerId,x:event.clientX,y:event.clientY});
         event.currentTarget.setPointerCapture(event.pointerId);
         stageRef.current?.setAttribute("data-dragging","true");
+        requestRender.current();
       }}
       onPointerMove={event => {
         const m=motion.current;
@@ -119,11 +142,12 @@ export function BrandHeroMark() {
         if(event.key!=="ArrowLeft" && event.key!=="ArrowRight") return;
         event.preventDefault(); motion.current.yaw+=event.key==="ArrowRight"?.18:-.18;
         motion.current.resume=performance.now()+2000;
+        requestRender.current();
       }}>
       <div className="brand-model__glow" aria-hidden="true" />
       <img className="brand-model__fallback" src="/alvora-mark.svg" alt="" />
       <canvas ref={canvasRef} aria-hidden="true" />
     </div>
-    <div className="brand-model__controls"><span><i /> Arraste para girar</span><button type="button" aria-pressed={paused} onClick={() => { motion.current.paused=!paused; setPaused(!paused); }}>{paused ? "Retomar rotação" : "Pausar rotação"}</button></div>
+    <div className="brand-model__controls"><span><i /> Arraste para girar</span><button type="button" aria-pressed={paused} onClick={() => { const next = !motion.current.paused; motion.current.paused=next; setPaused(next); requestRender.current(); }}>{paused ? "Retomar rotação" : "Pausar rotação"}</button></div>
   </div>;
 }
