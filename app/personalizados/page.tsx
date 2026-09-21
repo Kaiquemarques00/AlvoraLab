@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { QuoteForm } from "@/components/quote-form";
 import { SiteFooter, SiteHeader } from "@/components/site-header";
 
-export const metadata: Metadata = { title: "Personalizados | Alvora Lab", description: "Envie uma ideia ou referência para avaliação de projeto personalizado em impressão 3D." };
+export const metadata: Metadata = { title: "Personalizados", description: "Envie uma ideia ou referência para avaliação de projeto personalizado em impressão 3D." };
 
 export default async function PersonalizedPage({ searchParams }: { searchParams: Promise<{ produto?: string }> }) {
   const { produto = "" } = await searchParams;

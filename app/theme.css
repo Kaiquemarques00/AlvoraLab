@@ -7,6 +7,7 @@
   --brand-2:#8697ff;
   --brand-dark:#3654ff;
   --brand-soft:#8697ff;
+  --focus-ring:var(--brand-soft);
   --silver:#4d598b;
   --silver-2:#171c36;
   --paper:#080b18;

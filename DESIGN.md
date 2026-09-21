@@ -8,6 +8,9 @@ colors:
   action-dark: "#3654ff"
   action-hover-dark: "#2e49db"
   brand-soft: "#8697ff"
+  focus-light: "#163bff"
+  focus-dark: "#8697ff"
+  focus-on-blue: "#ffffff"
   paper-light: "#f7f8fc"
   surface-light: "#ffffff"
   surface-soft-light: "#f0f1f8"
@@ -120,7 +123,7 @@ O sistema tem temas claro e escuro equivalentes. O tema segue a preferência do 
 
 ### Primary
 - **Azul elétrico:** `brand-light` e `brand-dark` são os valores de `--brand` nos dois temas. Use-os em ações, links, metadados ativos, foco e indicadores. A ação principal do tema escuro usa `action-dark`, com `action-hover-dark` no hover.
-- **Azul de apoio:** `brand-soft` marca detalhes sobre fundos escuros e o contorno de foco.
+- **Azul de apoio:** `brand-soft` marca detalhes e o contorno de foco sobre fundos escuros. Em superfícies claras, o foco usa `focus-light`; sobre o painel azul, usa `focus-on-blue`. A variável `--focus-ring` aplica essas escolhas por contexto.
 
 ### Neutral
 - **Claro:** `paper-light` é o fundo geral; `surface-light` e `surface-soft-light` organizam cartões, campos e seções. `ink-light`, `ink-strong-light` e `muted-light` separam texto corrente, títulos e apoio. `line-light` define as divisões.
@@ -168,7 +171,7 @@ Cartões, grades e grandes painéis são quase retangulares. Slides usam a curva
 ### Buttons
 - **Primary:** altura mínima `button-primary-light.height`, texto bold, azul elétrico e seta direcional. No tema escuro, aplica-se a variante `button-primary-dark`.
 - **Secondary:** transparente, borda visível e texto de alto contraste. Hover troca cor da borda e do texto; a seta se desloca discretamente.
-- **Focus / disabled:** foco visível com contorno de 3px e afastamento de 4px. Desabilitado usa cinza e não recebe deslocamento no hover.
+- **Focus / disabled:** foco visível com contorno de 3px e afastamento de 4px, usando `--focus-ring` conforme a superfície. Filtros usam contorno interno para não ser cortado pela faixa rolável; controles do carrossel usam afastamento de 3px. Desabilitado usa cinza e não recebe deslocamento no hover.
 
 ### Chips
 

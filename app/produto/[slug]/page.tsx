@@ -28,7 +28,7 @@ export function generateStaticParams() { return products.map(({ slug }) => ({ sl
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const product = getProduct(slug);
-  return { title: product ? `${product.name} | Alvora Lab` : "Produto | Alvora Lab", description: product?.summary };
+  return { title: product?.name ?? "Produto", description: product?.summary };
 }
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {

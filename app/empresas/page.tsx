@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { QuoteForm } from "@/components/quote-form";
 import { SiteFooter, SiteHeader } from "@/components/site-header";
 
-export const metadata: Metadata = { title: "Para empresas | Alvora Lab", description: "Soluções físicas e pequenas produções personalizadas em impressão 3D para empresas e profissionais." };
+export const metadata: Metadata = { title: "Para empresas", description: "Soluções físicas e pequenas produções personalizadas em impressão 3D para empresas e profissionais." };
 
 export default function BusinessPage() {
   return <><SiteHeader /><main className="service-page">
