@@ -1,20 +1,24 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export function ThematicEntry() {
-  const [visible, setVisible] = useState(true);
+  const pathname = usePathname();
+  const [visible, setVisible] = useState(pathname === "/");
   const [opening, setOpening] = useState(false);
 
   useEffect(() => {
+    if (!visible || pathname !== "/") return;
+
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) {
       setVisible(false);
       return;
     }
 
-    // O RootLayout persiste durante a navegação interna do App Router, portanto
-    // a entrada reaparece em um novo carregamento real sem repetir entre páginas.
+    // O RootLayout persiste durante a navegação interna do App Router. A entrada
+    // pertence apenas ao carregamento inicial da home; rotas de conversão ficam livres.
     const openTimer = window.setTimeout(() => setOpening(true), 900);
     const closeTimer = window.setTimeout(() => setVisible(false), 1500);
     const safetyTimer = window.setTimeout(() => setVisible(false), 2500);
@@ -23,9 +27,9 @@ export function ThematicEntry() {
       window.clearTimeout(closeTimer);
       window.clearTimeout(safetyTimer);
     };
-  }, []);
+  }, [pathname, visible]);
 
-  if (!visible) return null;
+  if (pathname !== "/" || !visible) return null;
 
   return (
     <div className={`site-loader${opening ? " site-loader--opening" : ""}`} aria-hidden="true">

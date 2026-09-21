@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import { ProductImage } from "@/components/product-image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowIcon } from "@/components/arrow-icon";
@@ -191,9 +191,7 @@ export function ProductCarousel({ products }: { products: Product[] }) {
               key={product.slug}
               aria-label={`Ver ${product.name}`}
             >
-              <div className="product-slide__image">
-                <Image src={product.image} alt={product.imageAlt} fill sizes="(max-width: 700px) 84vw, (max-width: 1200px) 40vw, 28vw" loading="lazy" draggable={false} />
-              </div>
+              <ProductImage className="product-slide__image" src={product.image} alt={product.imageAlt} sizes="(max-width: 390px) 86vw, (max-width: 488px) 84vw, (max-width: 700px) 410px, (max-width: 1000px) 310px, (max-width: 1484px) 31vw, 460px" />
               <div className="product-slide__body">
                 <div className="product-slide__meta">
                   <span>{product.category}</span>

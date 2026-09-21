@@ -176,7 +176,7 @@ Filtros do catálogo são pílulas com borda. O ativo usa uma lavagem azul disti
 
 ### Cards / Containers
 
-Cartões de jornada, categoria e catálogo têm borda fina, imagem ou título dominante e número/metadados em azul. Em dispositivos com hover, sobem levemente, recebem sombra e mostram um traço inferior de 2px. Cartões do catálogo exibem a imagem inteira em proporção 4:3; os da vitrine usam imagem 16:10 no desktop e 4:3 no celular, com faixa de informações abaixo.
+Cartões de jornada, categoria e catálogo têm borda fina, imagem ou título dominante e número/metadados em azul. Em dispositivos com hover, sobem levemente, recebem sombra e mostram um traço inferior de 2px. Catálogo e vitrine compartilham a apresentação ProductImage: proporção 3:2 em todas as telas, enquadramento central, preenchimento contínuo e cantos retos. As imagens preservam as cores originais, sem sobreposição tonal ou zoom no hover. A proporção reserva espaço antes do carregamento; Next/Image fornece tamanhos responsivos e carregamento sob demanda.
 
 ### Inputs / Fields
 

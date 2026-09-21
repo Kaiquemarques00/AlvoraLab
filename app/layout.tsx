@@ -12,5 +12,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="pt-BR" suppressHydrationWarning><body><script dangerouslySetInnerHTML={{ __html: "try{const saved=localStorage.getItem('alvora-theme');const system=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=saved==='light'||saved==='dark'?saved:system;requestAnimationFrame(()=>document.documentElement.classList.add('theme-ready'))}catch{document.documentElement.dataset.theme='light'}" }} /><ThematicEntry /><ScrollMotion />{children}</body></html>;
+  return <html lang="pt-BR" data-scroll-behavior="smooth" suppressHydrationWarning><body><script dangerouslySetInnerHTML={{ __html: "try{const saved=localStorage.getItem('alvora-theme');const system=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=saved==='light'||saved==='dark'?saved:system;requestAnimationFrame(()=>document.documentElement.classList.add('theme-ready'))}catch{document.documentElement.dataset.theme='light'}" }} /><ThematicEntry /><ScrollMotion />{children}</body></html>;
 }

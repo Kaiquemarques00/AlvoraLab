@@ -48,6 +48,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       </div>
     </section>
     <section className="product-story"><div><h2>Uso e detalhes.</h2></div><div><p>{product.description}</p>{product.features?.length ? <ul>{product.features.map((feature) => <li key={feature}>{feature}</li>)}</ul> : null}</div></section>
-    <section className="product-next"><span>Personalização</span><h2>Descreva como você gostaria de adaptar a peça.</h2><Link href={quoteUrl} className="button button--primary">Abrir formulário de orçamento <ArrowIcon /></Link></section>
+    {product.customizable ? <section className="product-next"><span>Personalização</span><h2>Descreva como você gostaria de adaptar a peça.</h2><Link href={quoteUrl} className="button button--primary">Abrir formulário de orçamento <ArrowIcon /></Link></section> : null}
   </main><SiteFooter /></>;
 }

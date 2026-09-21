@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import { ProductImage } from "@/components/product-image";
 import { useState } from "react";
 import { ArrowIcon } from "@/components/arrow-icon";
 import { categories, products, type Category, type Product } from "@/lib/products";
@@ -33,7 +33,7 @@ export function CatalogClient({ initialCategory }: { initialCategory: string }) 
     </div>
     <section className="catalog-content">
       {filtered.some((product) => product.status === "demo") ? <p className="catalog-disclaimer catalog-disclaimer--top">Peças marcadas como demonstração ainda não estão à venda.</p> : null}
-      {filtered.length ? <div className="catalog-grid">{filtered.map((product, index) => <Link href={`/produto/${product.slug}`} key={product.slug} className="catalog-card"><div className="catalog-card__photo"><Image src={product.image} alt={product.imageAlt} fill sizes="(max-width: 700px) calc(100vw - 32px), (max-width: 1050px) 45vw, 30vw" loading={index === 0 ? "eager" : "lazy"} /></div><div className="catalog-card__body"><div><span>{product.category} · {statusLabels[product.status]}</span><h2>{product.name}</h2><p>{product.summary}</p></div><ArrowIcon diagonal /></div></Link>)}</div> : <div className="empty-state"><h2>{query ? "Nenhum resultado para esta busca." : "Nenhuma peça nesta categoria."}</h2><p>{query ? "Experimente outro termo ou limpe a busca e os filtros." : "Escolha outra categoria ou veja todas as peças."}</p><button type="button" className="button button--primary" onClick={() => { setQuery(""); setCategory("Todos"); }}>Ver todas as peças <ArrowIcon /></button></div>}
+      {filtered.length ? <div className="catalog-grid">{filtered.map((product, index) => <Link href={`/produto/${product.slug}`} key={product.slug} className="catalog-card"><ProductImage className="catalog-card__photo" src={product.image} alt={product.imageAlt} sizes="(max-width: 700px) calc(100vw - 34px), (max-width: 1050px) calc(45vw - 11px), (max-width: 1800px) calc(30vw - 14px), calc(33.333vw - 74px)" loading={index === 0 ? "eager" : "lazy"} /><div className="catalog-card__body"><div><span>{product.category} · {statusLabels[product.status]}</span><h2>{product.name}</h2><p>{product.summary}</p></div><ArrowIcon diagonal /></div></Link>)}</div> : <div className="empty-state"><h2>{query ? "Nenhum resultado para esta busca." : "Nenhuma peça nesta categoria."}</h2><p>{query ? "Experimente outro termo ou limpe a busca e os filtros." : "Escolha outra categoria ou veja todas as peças."}</p><button type="button" className="button button--primary" onClick={() => { setQuery(""); setCategory("Todos"); }}>Ver todas as peças <ArrowIcon /></button></div>}
     </section>
   </div>;
 }

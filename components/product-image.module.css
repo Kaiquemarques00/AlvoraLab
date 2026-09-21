@@ -1,0 +1,15 @@
+.frame {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 0;
+  background: #f4f5f9;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+  pointer-events: none;
+  user-select: none;
+}

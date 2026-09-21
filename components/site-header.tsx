@@ -15,7 +15,7 @@ export function SiteHeader() {
 export function SiteFooter() {
   return <footer className="site-footer" id="contato">
     <div className="site-footer__top">
-      <div className="site-footer__identity"><div className="site-footer__logo-spin" tabIndex={0} aria-label="Alvora Lab"><img src="/alvora-lab.svg" alt="Alvora Lab" /></div><p>Ideias digitais transformadas em objetos reais, úteis e personalizáveis.</p></div>
+      <div className="site-footer__identity"><div className="site-footer__logo-spin"><img src="/alvora-lab.svg" alt="Alvora Lab" /></div><p>Ideias digitais transformadas em objetos reais, úteis e personalizáveis.</p></div>
       <div className="site-footer__column"><h2>Explore</h2><nav aria-label="Navegação do rodapé"><Link href="/">Início</Link><Link href="/catalogo">Catálogo</Link><Link href="/personalizados">Personalizados</Link><Link href="/empresas">Para empresas</Link><Link href="/sobre">Sobre</Link></nav></div>
       <div className="site-footer__column"><h2>Atendimento</h2><div className="site-footer__contacts"><div><span>E-mail</span>{contact.email ? <a href={`mailto:${contact.email}`}>{contact.email}</a> : <span>Canal em configuração</span>}</div><div><span>WhatsApp</span>{contact.whatsappNumber ? <a href={`https://wa.me/${contact.whatsappNumber}`} target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a> : <span>Canal em configuração</span>}</div><div><span>Instagram</span>{contact.instagramUrl ? <a href={contact.instagramUrl} target="_blank" rel="noopener noreferrer">Visitar perfil</a> : <span>@alvoralab_</span>}</div></div></div>
     </div>
